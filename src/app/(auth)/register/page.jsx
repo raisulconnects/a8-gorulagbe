@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FaCow } from "react-icons/fa6";
+import { FaCow, FaGoogle } from "react-icons/fa6";
 import { authClient } from "@/lib/auth-client";
 import toast from "react-hot-toast";
 
@@ -17,6 +17,7 @@ export default function RegisterPage() {
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -28,7 +29,7 @@ export default function RegisterPage() {
     setLoading(true);
     setError("");
 
-    console.log("Submitting registration form:", form);
+    // console.log("Submitting registration form:", form);
 
     if (form.password.length < 8) {
       setError("Password must be at least 8 characters.");
@@ -53,11 +54,17 @@ export default function RegisterPage() {
     router.push("/login");
   };
 
+  const handleGoogleLogin = async () => {
+    setGoogleLoading(true);
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-950 via-green-900 to-emerald-800 flex items-center justify-center px-4 py-16">
       <div className="card bg-base-100 shadow-2xl w-full max-w-md">
         <div className="card-body p-8">
-          {/* Logo */}
           <div className="flex flex-col items-center gap-2 mb-6">
             <div className="bg-emerald-600 text-white p-3 rounded-2xl">
               <FaCow size={28} />
@@ -68,14 +75,12 @@ export default function RegisterPage() {
             <p className="text-base-content/50 text-sm">Create your account</p>
           </div>
 
-          {/* Error */}
           {error && (
             <div className="alert alert-error text-sm py-2 mb-4">
               <span>{error}</span>
             </div>
           )}
 
-          {/* Form */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div className="form-control">
               <label className="label">
@@ -147,13 +152,18 @@ export default function RegisterPage() {
               Register
             </button>
           </form>
+          <button
+            onClick={handleGoogleLogin}
+            disabled={googleLoading}
+            className={`btn btn-outline border-emerald-600 text-emerald-700 hover:bg-emerald-50 w-full ${googleLoading ? "loading" : ""}`}
+          >
+            {!googleLoading && <FaGoogle />}
+            {googleLoading ? "Redirecting..." : "Continue with Google"}
+          </button>
 
           <p className="text-center text-sm text-base-content/50 mt-6">
             Already have an account?{" "}
-            <Link
-              href="/login"
-              className="text-emerald-600 font-semibold"
-            >
+            <Link href="/login" className="text-emerald-600 font-semibold">
               Login
             </Link>
           </p>

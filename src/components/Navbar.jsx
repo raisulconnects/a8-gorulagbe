@@ -11,8 +11,8 @@ const Navbar = () => {
   const router = useRouter();
   const { data, error, isPending } = useSession();
 
-  console.log(data);
-  console.log("Username: ", data?.user?.name);
+  // console.log(data);
+  // console.log("Username: ", data?.user?.name);
 
   const handleLogout = async () => {
     await authClient.signOut();
@@ -32,7 +32,6 @@ const Navbar = () => {
         </Link>
       </div>
 
-      {/* Center */}
       <div className="navbar-center hidden md:flex">
         <ul className="menu menu-horizontal px-1 text-base font-medium">
           <li>
@@ -54,6 +53,18 @@ const Navbar = () => {
           <span className="text-sm text-gray-500">
             Welcome, {data.user.name}
           </span>
+
+          <span
+            className="w-8 h-8 rounded-full overflow-hidden cursor-pointer"
+            onClick={() => router.push("/my-profile")}
+          >
+            <img
+              src={data.user.image || "/default-avatar.png"}
+              alt="User Avatar"
+              className="w-full h-full object-cover"
+            />
+          </span>
+
           <button
             className="btn btn-primary btn-sm text-white"
             onClick={() => router.push("/my-profile")}

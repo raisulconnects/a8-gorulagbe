@@ -24,7 +24,7 @@ export default function LoginPage() {
     setLoading(true);
     setError("");
 
-    console.log("Submitting login form: ", form);
+    // console.log("Submitting login form: ", form);
 
     const { error } = await authClient.signIn.email({
       email: form.email,
@@ -46,6 +46,8 @@ export default function LoginPage() {
     const data = await authClient.signIn.social({
       provider: "google",
     });
+
+    console.log("Google login response: ", data);
   };
 
   return (
