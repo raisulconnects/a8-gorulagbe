@@ -38,7 +38,7 @@ export default function AnimalDetailsPage({ params }) {
     setForm({ name: "", email: "", phone: "", address: "" });
     setLoading(false);
 
-    router.push("/animals");
+    setTimeout(() => router.push("/animals"), 3000);
   };
 
   return (
