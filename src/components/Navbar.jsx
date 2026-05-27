@@ -1,13 +1,25 @@
 "use client";
+import { authClient, useSession } from "@/lib/auth-client";
 import "animate.css";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FaCow } from "react-icons/fa6";
 
 const Navbar = () => {
+  const router = useRouter();
+  const { data, error, isLoading } = useSession();
+
+  console.log(data);
+  console.log("Username: ", data?.user?.name);
+
+  const handleLogout = async () => {
+    await authClient.signOut();
+    router.replace("/login");
+  };
+
   return (
     <div className="navbar bg-base-100 shadow-sm px-4 md:px-10">
-      {/* Left */}
       <div className="navbar-start">
         <Link
           href="/"
@@ -31,16 +43,33 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {/* Right */}
-      <div className="navbar-end gap-2">
-        <Link href="/login" className="btn btn-outline btn-sm">
-          Login
-        </Link>
+      {isLoading ? (
+        <div className="navbar-end">
+          <span className="text-sm text-gray-500">Loading...</span>
+        </div>
+      ) : data?.user ? (
+        <div className="navbar-end gap-2">
+          <span className="text-sm text-gray-500">
+            Welcome, {data.user.name}
+          </span>
+          <button
+            onClick={handleLogout}
+            className="btn btn-error btn-sm text-white"
+          >
+            Logout
+          </button>
+        </div>
+      ) : (
+        <div className="navbar-end gap-2">
+          <Link href="/login" className="btn btn-outline btn-sm">
+            Login
+          </Link>
 
-        <Link href="/register" className="btn btn-success btn-sm text-white">
-          Register
-        </Link>
-      </div>
+          <Link href="/register" className="btn btn-success btn-sm text-white">
+            Register
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
