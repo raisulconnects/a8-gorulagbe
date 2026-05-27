@@ -8,7 +8,7 @@ import { mongodbAdapter } from "better-auth/adapters/mongodb";
 const client = new MongoClient(process.env.MONGO_DB_URI);
 const db = client.db();
 
-await client.connect() // would throw the same error
+// await client.connect() // would throw the same error
 
 export const auth = betterAuth({
   database: mongodbAdapter(db),

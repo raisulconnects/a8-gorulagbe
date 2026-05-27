@@ -7,6 +7,8 @@ export async function proxy(request) {
     headers: await headers(),
   });
 
+  // console.log("Session in middleware:", session);
+
   const url = new URL(request.url);
   const pathname = url.pathname;
 
