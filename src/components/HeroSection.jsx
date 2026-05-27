@@ -1,3 +1,4 @@
+import "animate.css";
 import Link from "next/link";
 import { FaCow } from "react-icons/fa6";
 
@@ -9,21 +10,21 @@ export default function HeroSection() {
 
       <div className="relative max-w-7xl mx-auto px-6 py-20 w-full flex flex-col md:flex-row items-center gap-14">
         {/* Left side er text gula */}
-        <div className="flex-1 text-center md:text-left">
-          <span className="inline-block bg-yellow-400/15 text-yellow-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 border border-yellow-400/25">
+        <div className="flex-1 text-center md:text-left md:animate__tada">
+          <span className="inline-block bg-yellow-400/15 text-yellow-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 border border-yellow-400/25 ">
             🌙 Qurbani Eid Special 2026
           </span>
+          <div>
+            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+              Your Trusted <br />
+              <span className="text-yellow-400">Qurbani Marketplace</span>
+            </h1>
 
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
-            Your Trusted <br />
-            <span className="text-yellow-400">Qurbani Marketplace</span>
-          </h1>
-
-          <p className="text-gray-300 text-lg max-w-md leading-relaxed mb-10">
-            Browse and book your Qurbani animals from the comfort of your home.
-            Easy booking, safe transactions, nationwide delivery.
-          </p>
-
+            <p className="text-gray-300 text-lg max-w-md leading-relaxed mb-10 ">
+              Browse and book your Qurbani animals from the comfort of your
+              home. Easy booking, safe transactions, nationwide delivery.
+            </p>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Link
               href="/animals"
