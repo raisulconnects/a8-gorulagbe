@@ -2,11 +2,24 @@ import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 
-// This function can be marked `async` if using `await` inside
 export async function proxy(request) {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
+
+  const url = new URL(request.url);
+  const pathname = url.pathname;
+
+  if (pathname === "/register") {
+    if (session?.user) {
+      return NextResponse.redirect(new URL("/my-profile", request.url));
+    } else {
+      return NextResponse.next();
+    }
+  }
+
+  // console.log("Session:", session);
+  // console.log("Pathname:", pathname);
 
   if (session?.user) {
     return NextResponse.next();
@@ -15,9 +28,6 @@ export async function proxy(request) {
   return NextResponse.redirect(new URL("/login", request.url));
 }
 
-// Alternatively, you can use a default export:
-// export default function proxy(request) { ... }
-
 export const config = {
-  matcher: ["/animals/:id", "/my-profile"],
+  matcher: ["/animals/:id", "/my-profile", "/register"],
 };

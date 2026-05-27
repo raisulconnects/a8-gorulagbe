@@ -9,7 +9,7 @@
     "age": 3,
     "location": "Bogura",
     "description": "Healthy deshi cow suitable for Qurbani. Well fed with natural খাবার and properly maintained.",
-    "image": "https://images.unsplash.com/photo-1516467508483-a7212febe31a",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/31/Sahiwala_02_%28cropped%29.JPG",
     "category": "Large Animal",
     "featured": true
   },
@@ -37,7 +37,7 @@
     "age": 2,
     "location": "Rajshahi",
     "description": "Popular Black Bengal goat known for healthy meat and excellent quality.",
-    "image": "https://images.unsplash.com/photo-1517849845537-4d257902454a",
+    "image": "https://www.thestatesman.com/wp-content/uploads/2019/11/GOAT.jpg",
     "category": "Small Animal",
     "featured": true
   },
@@ -79,7 +79,7 @@
     "age": 1.5,
     "location": "Cumilla",
     "description": "Affordable and healthy local white goat perfect for small families.",
-    "image": "https://images.unsplash.com/photo-1504593811423-6dd665756598",
+    "image": "https://images.unsplash.com/photo-1524024973431-2ad916746881?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2hpdGUlMjBnb2F0fGVufDB8fDB8fHww",
     "category": "Small Animal",
     "featured": false
   },
@@ -93,7 +93,7 @@
     "age": 4,
     "location": "Chattogram",
     "description": "Strong Red Sindhi cow with excellent milk lineage and health.",
-    "image": "https://images.unsplash.com/photo-1560807707-8cc77767d783",
+    "image": "https://images.unsplash.com/photo-1545468800-85cc9bc6ecf7",
     "category": "Large Animal",
     "featured": true
   },
@@ -107,7 +107,7 @@
     "age": 3,
     "location": "Natore",
     "description": "Healthy black deshi bull raised in natural farm conditions.",
-    "image": "https://images.unsplash.com/photo-1602491674275-316d2e2b7e63",
+    "image": "https://images.unsplash.com/photo-1524024973431-2ad916746881?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2hpdGUlMjBnb2F0fGVufDB8fDB8fHww",
     "category": "Large Animal",
     "featured": false
   },
@@ -121,7 +121,7 @@
     "age": 2.5,
     "location": "Sylhet",
     "description": "Premium Boer goat known for high meat yield and fast growth.",
-    "image": "https://images.unsplash.com/photo-1603630881890-7362f4a5d6a7",
+    "image": "https://a-z-animals.com/media/2021/05/Cashmere-Goat-hexi-1024x535.jpg",
     "category": "Small Animal",
     "featured": true
   },
@@ -135,7 +135,7 @@
     "age": 2,
     "location": "Dhaka",
     "description": "Fluffy Kashmiri goat with premium appearance and good health.",
-    "image": "https://images.unsplash.com/photo-1589647363585-f4a7d6e5f0c2",
+    "image": "https://www.pashwrap.com/cdn/shop/articles/Australian-Cashmere-Goat.jpg?v=1690539955&width=1100",
     "category": "Small Animal",
     "featured": false
   },
@@ -149,7 +149,7 @@
     "age": 5,
     "location": "Mymensingh",
     "description": "Large Holstein cow with excellent body structure and health.",
-    "image": "https://images.unsplash.com/photo-1500043357865-c6b8827edf49",
+    "image": "https://i.pinimg.com/474x/95/d5/c7/95d5c7a40ed570c475e28a15bf31d335.jpg",
     "category": "Large Animal",
     "featured": true
   },
@@ -163,7 +163,7 @@
     "age": 1.8,
     "location": "Barisal",
     "description": "Simple and healthy brown goat suitable for Qurbani.",
-    "image": "https://images.unsplash.com/photo-1551906995-5b3c9c9c0a0d",
+    "image": "https://www.cabidigitallibrary.org/cms/10.1079/cabicompendium.91308/asset/dc947e14-2052-4fd8-92fd-53ccde388d80/assets/graphic/bengag03.jpeg",
     "category": "Small Animal",
     "featured": false
   },
@@ -177,7 +177,7 @@
     "age": 3.5,
     "location": "Pabna",
     "description": "Well-fed deshi cow raised in organic environment.",
-    "image": "https://images.unsplash.com/photo-1560807707-8cc77767d783",
+    "image": "https://images.unsplash.com/photo-1545468800-85cc9bc6ecf7",
     "category": "Large Animal",
     "featured": true
   },
@@ -191,7 +191,7 @@
     "age": 1,
     "location": "Rangpur",
     "description": "Small and healthy young goat, perfect for budget Qurbani.",
-    "image": "https://images.unsplash.com/photo-1594761051629-4c5c2f4a2d3a",
+    "image": "https://i.pinimg.com/474x/7e/43/46/7e43463448ecbf5e9e2035de71c46bd3.jpg",
     "category": "Small Animal",
     "featured": false
   },
@@ -233,7 +233,7 @@
     "age": 3,
     "location": "Brahmanbaria",
     "description": "Farm-raised deshi cow with natural feeding.",
-    "image": "https://images.unsplash.com/photo-1516467508483-a7212febe31a",
+    "image": "https://imgs.search.brave.com/zZiQthX2agkIn_GxyFIa-7pehll-tJNHr8NqEfAnDxE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNTA1/MDUxMjE1L3Bob3Rv/L2Nvdy1pc29sYXRl/ZC1vbi13aGl0ZS5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/YThjNHdwakhVSHla/QlpmZ0VCSElhWW81/R0xLcWR5TlRNN1Vn/SkxXdm5UVT0",
     "category": "Large Animal",
     "featured": false
   },
@@ -275,7 +275,7 @@
     "age": 1.5,
     "location": "Naogaon",
     "description": "Small deshi goat perfect for affordable Qurbani.",
-    "image": "https://images.unsplash.com/photo-1504593811423-6dd665756598",
+    "image": "https://tiimg.tistatic.com/fp/1/008/081/white-live-jamunapari-goat-for-farming-purpose-680.jpg",
     "category": "Small Animal",
     "featured": false
   }

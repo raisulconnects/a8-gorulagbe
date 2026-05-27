@@ -3,7 +3,7 @@ import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-green-950 text-white mt-20">
+    <footer className="bg-green-950 text-white">
       <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
         {/* About */}
         <div>
@@ -11,9 +11,8 @@ const Footer = () => {
             GoruLagbe
           </h2>
 
-          <p className="text-sm leading-7 text-gray-300">
-            বাংলাদেশের বিশ্বস্ত অনলাইন কুরবানির হাট। সহজে গরু, ছাগল ব্রাউজ করুন
-            এবং বুকিং করুন নিরাপদভাবে।
+          <p className="text-sm text-gray-300 max-w-[350px]">
+            Trusted Online Shop for Purchasing Animals in Bangladesh. We provide a wide variety of animals, including cows, goats, sheep, and more.
           </p>
         </div>
 
