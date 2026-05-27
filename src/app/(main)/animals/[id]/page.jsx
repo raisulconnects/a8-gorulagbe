@@ -29,7 +29,11 @@ export default function AnimalDetailsPage({ params }) {
     e.preventDefault();
     setLoading(true);
 
-    toast.success("Booking confirmed! We'll contact you shortly.");
+    toast.success(`Successfully purchased ${animal.name}! We'll contact you shortly.`, {
+      style: { background: "#14532d", color: "#fff", fontWeight: "600" },
+      iconTheme: { primary: "#4ade80", secondary: "#14532d" },
+      duration: 4000,
+    });
 
     setForm({ name: "", email: "", phone: "", address: "" });
     setLoading(false);

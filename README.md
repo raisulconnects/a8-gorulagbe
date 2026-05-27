@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GoruLagbe — Online Qurbani Hat Platform
+
+A modern web marketplace for browsing and booking Qurbani (sacrificial) animals in Bangladesh. Built with Next.js 16, React 19, MongoDB, and better-auth.
+
+## Features
+
+- Browse cows, goats, and bulls with detailed info (breed, weight, age, price, location)
+- Sort animals by price
+- User registration & login (email/password + Google OAuth)
+- Authenticated user profile
+- Featured animals curated by livestock experts
+- Qurbani tips and breed guide sections
+- Responsive design with Tailwind CSS & daisyUI
+
+## Tech Stack
+
+- **Framework:** Next.js 16
+- **UI Library:** React 19
+- **Styling:** Tailwind CSS 4 + daisyUI 5
+- **Authentication:** better-auth (email/password, Google OAuth)
+- **Database:** MongoDB (via better-auth MongoDB adapter)
+- **Icons:** react-icons
+- **Notifications:** react-hot-toast
+- **Animations:** animate.css
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Copy environment variables
+cp .env.example .env
+# Then fill in your MongoDB URI and OAuth credentials
+
+# Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the app.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variable | Description |
+|---|---|
+| `BETTER_AUTH_SECRET` | Secret key for better-auth |
+| `BETTER_AUTH_URL` | Auth callback URL (e.g. http://localhost:3000) |
+| `MONGO_DB_URI` | MongoDB connection string |
+| `GOOGLE_CLIENT_ID` | Google OAuth client ID |
+| `GOOGLE_CLIENT_SECRET` | Google OAuth client secret |
 
-## Learn More
+## Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+- `npm run dev` — Start development server
+- `npm run build` — Build for production
+- `npm run start` — Start production server
+- `npm run lint` — Run ESLint
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/
+│   ├── (auth)/          # Login & register pages
+│   │   ├── login/
+│   │   └── register/
+│   ├── (main)/          # Main app pages (animals, profile)
+│   │   ├── animals/     # All animals + individual [id] page
+│   │   └── my-profile/
+│   ├── api/auth/        # Auth API route (better-auth handler)
+│   ├── layout.js        # Root layout (Navbar + Footer)
+│   ├── page.js          # Homepage
+│   └── globals.css      # Global styles
+├── components/
+│   ├── AnimalCard.jsx
+│   ├── FeaturedAnimals.jsx
+│   ├── Footer.jsx
+│   ├── HeroSection.jsx
+│   └── Navbar.jsx
+├── data/
+│   └── animals.json     # Animal listings data
+└── lib/
+    ├── auth-client.js   # better-auth client config
+    ├── auth.js          # better-auth server config
+    └── utils.js         # Helper functions (formatPrice, featured)
+```
