@@ -9,16 +9,16 @@ export async function proxy(request) {
 
   // console.log("Session in middleware:", session);
 
-  const url = new URL(request.url);
-  const pathname = url.pathname;
+  // const url = new URL(request.url);
+  // const pathname = url.pathname;
 
-  if (pathname === "/register") {
-    if (session?.user) {
-      return NextResponse.redirect(new URL("/my-profile", request.url));
-    } else {
-      return NextResponse.next();
-    }
-  }
+  // if (pathname === "/register") {
+  //   if (session?.user) {
+  //     return NextResponse.redirect(new URL("/my-profile", request.url));
+  //   } else {
+  //     return NextResponse.next();
+  //   }
+  // }
 
   // console.log("Session:", session);
   // console.log("Pathname:", pathname);
@@ -31,5 +31,5 @@ export async function proxy(request) {
 }
 
 export const config = {
-  matcher: ["/animals/:id", "/my-profile", "/register"],
+  matcher: ["/animals/:id", "/my-profile"],
 };
