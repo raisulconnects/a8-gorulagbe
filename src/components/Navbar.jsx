@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 
 const Navbar = () => {
   const router = useRouter();
-  const { data, error, isLoading } = useSession();
+  const { data, error, isPending } = useSession();
 
   console.log(data);
   console.log("Username: ", data?.user?.name);
@@ -45,7 +45,7 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {isLoading ? (
+      {isPending ? (
         <div className="navbar-end">
           <span className="text-sm text-gray-500">Loading...</span>
         </div>
@@ -54,6 +54,12 @@ const Navbar = () => {
           <span className="text-sm text-gray-500">
             Welcome, {data.user.name}
           </span>
+          <button
+            className="btn btn-primary btn-sm text-white"
+            onClick={() => router.push("/my-profile")}
+          >
+            My Profile
+          </button>
           <button
             onClick={handleLogout}
             className="btn btn-error btn-sm text-white"

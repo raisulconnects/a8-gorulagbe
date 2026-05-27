@@ -11,7 +11,7 @@ export async function proxy(request) {
   if (session?.user) {
     return NextResponse.next();
   }
-  
+
   return NextResponse.redirect(new URL("/login", request.url));
 }
 
@@ -19,5 +19,5 @@ export async function proxy(request) {
 // export default function proxy(request) { ... }
 
 export const config = {
-  matcher: "/animals/:id",
+  matcher: ["/animals/:id", "/my-profile"],
 };
