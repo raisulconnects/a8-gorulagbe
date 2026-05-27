@@ -42,9 +42,8 @@ export default function HeroSection() {
 
           <div className="flex gap-10 mt-12 justify-center md:justify-start">
             {[
-              { val: "500+", label: "Animals Listed" },
+              { val: "15+", label: "Animals Listed" },
               { val: "12+", label: "Districts Covered" },
-              { val: "100%", label: "Verified Sellers" },
             ].map((s) => (
               <div key={s.label}>
                 <div className="text-2xl font-extrabold text-yellow-400">

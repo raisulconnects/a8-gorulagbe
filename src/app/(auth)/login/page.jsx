@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { FaCow } from "react-icons/fa6";
+import { FaCow, FaGoogle } from "react-icons/fa6";
 import { authClient } from "@/lib/auth-client";
 import toast from "react-hot-toast";
 
@@ -12,6 +12,7 @@ export default function LoginPage() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -38,6 +39,13 @@ export default function LoginPage() {
 
     toast.success("Logged in successfully!");
     router.push("/");
+  };
+
+  const handleGoogleLogin = async () => {
+    setGoogleLoading(true);
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
   };
 
   return (
@@ -100,14 +108,19 @@ export default function LoginPage() {
             >
               Login
             </button>
+            <button
+              onClick={handleGoogleLogin}
+              disabled={googleLoading}
+              className={`btn btn-outline border-emerald-600 text-emerald-700 hover:bg-emerald-50 w-full ${googleLoading ? "loading" : ""}`}
+            >
+              {!googleLoading && <FaGoogle />}
+              {googleLoading ? "Redirecting..." : "Continue with Google"}
+            </button>
           </form>
 
           <p className="text-center text-sm text-base-content/50 mt-6">
             Dont have an account?{" "}
-            <Link
-              href="/register"
-              className="text-emerald-600 font-semibold"
-            >
+            <Link href="/register" className="text-emerald-600 font-semibold">
               Register
             </Link>
           </p>
