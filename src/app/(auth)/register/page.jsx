@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FaCow } from "react-icons/fa6";
 import { authClient } from "@/lib/auth-client";
+import toast from "react-hot-toast";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -48,6 +49,7 @@ export default function RegisterPage() {
       return;
     }
 
+    toast.success("Account created successfully! Please login.");
     router.push("/login");
   };
 

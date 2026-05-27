@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FaCow } from "react-icons/fa6";
 import { authClient } from "@/lib/auth-client";
+import toast from "react-hot-toast";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -35,6 +36,7 @@ export default function LoginPage() {
       return;
     }
 
+    toast.success("Logged in successfully!");
     router.push("/");
   };
 

@@ -5,6 +5,7 @@ import "animate.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FaCow } from "react-icons/fa6";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const router = useRouter();
@@ -15,6 +16,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     await authClient.signOut();
+    toast.success("Logged out successfully!");
     router.replace("/login");
   };
 
